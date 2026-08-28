@@ -60,7 +60,7 @@ function Footer() {
           <h4>CONTACT</h4>
 
           <a href="tel:+254781325424">
-            +254 700 000 000
+            +254 781 325 424
           </a>
 
           <a href="mailto:michaelndolo17142@gmail.com">

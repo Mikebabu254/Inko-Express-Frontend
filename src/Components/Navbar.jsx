@@ -53,17 +53,17 @@ function NavBar() {
           </a>
 
           <a
-            href="#services"
-            onClick={closeMenu}
-          >
-            Services
-          </a>
-
-          <a
             href="#how-it-works"
             onClick={closeMenu}
           >
             How It Works
+          </a>
+
+          <a
+            href="#services"
+            onClick={closeMenu}
+          >
+            Services
           </a>
 
           <a

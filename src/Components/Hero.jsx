@@ -1,13 +1,10 @@
-
 import React, { useState } from "react";
-
 import HeroSection from "./Hero/HeroSection";
 import ServicesSection from "./Hero/ServicesSection";
 import HowItWorksSection from "./Hero/HowItWorksSection";
 import OrderSection from "./Hero/OrderSection";
 import AboutSection from "./Hero/AboutSection";
 import CtaSection from "./Hero/CtaSection";
-import Heroo from "./Hero/Hero";
 
 function Hero() {
   const [formData, setFormData] = useState({
@@ -51,9 +48,8 @@ function Hero() {
   return (
     <main>
       <HeroSection scrollToOrder={scrollToOrder} />
-      <ServicesSection scrollToOrder={scrollToOrder} />
-      <Heroo scrollToOrder={scrollToOrder}/>
       <HowItWorksSection scrollToOrder={scrollToOrder} />
+      <ServicesSection scrollToOrder={scrollToOrder} />
       <OrderSection
         formData={formData}
         submitted={submitted}

@@ -1,4 +1,3 @@
-
 import React from "react";
 
 function HeroSection({ scrollToOrder }) {
@@ -72,7 +71,75 @@ function HeroSection({ scrollToOrder }) {
 
         </div>
 
-        <div className="hero-visual">
+        <div className="hero-card-wrapper">
+          <div className="hero-card">
+            <div className="card-top">
+              <span className="card-icon">🛍️</span>
+
+              <div>
+                <small>INKO ERRANDS</small>
+                <h3>Your shopping list</h3>
+              </div>
+
+              <span className="status-dot"></span>
+            </div>
+
+            <div className="shopping-list">
+              <div className="shopping-item">
+                <span>📱</span>
+
+                <div>
+                  <strong>Phone accessories</strong>
+                  <small>CBD electronics shop</small>
+                </div>
+
+                <b>✓</b>
+              </div>
+
+              <div className="shopping-item">
+                <span>👕</span>
+
+                <div>
+                  <strong>Clothing</strong>
+                  <small>City Market area</small>
+                </div>
+
+                <b>✓</b>
+              </div>
+
+              <div className="shopping-item">
+                <span>📚</span>
+
+                <div>
+                  <strong>Books & stationery</strong>
+                  <small>Tom Mboya Street</small>
+                </div>
+
+                <b>✓</b>
+              </div>
+            </div>
+
+            <div className="card-footer">
+              <div>
+                <small>Delivery</small>
+                <strong>To your location</strong>
+              </div>
+
+              <span>→</span>
+            </div>
+          </div>
+
+          <div className="floating-card">
+            <span>✓</span>
+
+            <div>
+              <strong>Errand accepted</strong>
+              <small>We're on our way</small>
+            </div>
+          </div>
+        </div>
+
+        {/* <div className="hero-visual">
 
           <div className="hero-logo-card">
             <img
@@ -97,7 +164,7 @@ function HeroSection({ scrollToOrder }) {
 
           </div>
 
-        </div>
+        </div> */}
 
       </div>
     </section>

@@ -174,7 +174,7 @@ img {
       transparent 25%
     ),
     var(--cream);
-
+  margin-top: -80px;
   overflow: hidden;
 }
 
@@ -182,7 +182,6 @@ img {
   width: min(1180px, 92%);
   min-height: 720px;
   margin: auto;
-
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
 
