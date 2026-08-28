@@ -808,7 +808,7 @@ function App() {
 
           <a href="#home" className="brand-logo">
             <img
-              src="/inko express logo.png"
+              src="/logo.png"
               alt="Inko Express logo"
             />
           </a>
@@ -1504,7 +1504,7 @@ function App() {
               <div className="logo-circle">
 
                 <img
-                  src="/inko express logo.png"
+                  src="/logo.png"
                   alt="Inko Express"
                 />
 
