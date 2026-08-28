@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 
-function Order() {
+function OrderSection() {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -30,45 +30,32 @@ function Order() {
     setSubmitted(true);
   };
 
-  const handleNewRequest = () => {
-    setFormData({
-      name: "",
-      phone: "",
-      location: "",
-      item: "",
-      quantity: "1",
-      notes: "",
-    });
-
-    setSubmitted(false);
-  };
-
   return (
-    <section
-      className="order-section section"
-      id="order"
-    >
+    <section className="order-section section" id="order">
       <div className="order-container">
+
+        {/* LEFT SIDE */}
         <div className="order-info">
           <span className="eyebrow">
             REQUEST AN ERRAND
           </span>
 
           <h2>
-            Let us handle
+            Let us make
             <span> the trip.</span>
           </h2>
 
           <p>
-            Fill in the form and tell us what you need.
-            We'll review your request and get back to you
-            with the estimated cost.
+            Give us the details of your errand.
+            We'll review the request and contact
+            you before proceeding.
           </p>
 
-          <div className="order-points">
+          <div className="order-features">
+
             <div>
               <span>✓</span>
-              <p>No complicated process</p>
+              <p>Simple request process</p>
             </div>
 
             <div>
@@ -80,12 +67,21 @@ function Order() {
               <span>✓</span>
               <p>Convenient delivery</p>
             </div>
+
+            <div>
+              <span>✓</span>
+              <p>Nairobi CBD focused</p>
+            </div>
+
           </div>
         </div>
 
+        {/* FORM CARD */}
         <div className="form-card">
+
           {submitted ? (
             <div className="success-message">
+
               <div className="success-icon">
                 ✓
               </div>
@@ -95,29 +91,37 @@ function Order() {
               </h3>
 
               <p>
-                We've received your errand request.
-                We'll get back to you shortly.
+                Thank you. We've received your
+                errand request and will contact
+                you shortly.
               </p>
 
               <button
-                type="button"
-                onClick={handleNewRequest}
                 className="primary-btn"
+                onClick={() => setSubmitted(false)}
+                type="button"
               >
                 Make another request
               </button>
+
             </div>
           ) : (
+
             <form onSubmit={handleSubmit}>
+
               <div className="form-header">
-                <span>INKO EXPRESS</span>
+                <span>
+                  INKO EXPRESS
+                </span>
 
                 <h3>
                   What can we get for you?
                 </h3>
               </div>
 
+              {/* NAME + PHONE */}
               <div className="form-row">
+
                 <div className="form-group">
                   <label htmlFor="name">
                     Your name
@@ -149,11 +153,14 @@ function Order() {
                     required
                   />
                 </div>
+
               </div>
 
+              {/* LOCATION */}
               <div className="form-group">
+
                 <label htmlFor="location">
-                  Where should we deliver?
+                  Delivery location
                 </label>
 
                 <input
@@ -165,10 +172,14 @@ function Order() {
                   placeholder="e.g. Westlands"
                   required
                 />
+
               </div>
 
+              {/* ITEM + QUANTITY */}
               <div className="form-row">
+
                 <div className="form-group">
+
                   <label htmlFor="item">
                     What do you need?
                   </label>
@@ -182,9 +193,11 @@ function Order() {
                     placeholder="e.g. Phone charger"
                     required
                   />
+
                 </div>
 
                 <div className="form-group quantity">
+
                   <label htmlFor="quantity">
                     Quantity
                   </label>
@@ -192,16 +205,20 @@ function Order() {
                   <input
                     id="quantity"
                     type="number"
-                    min="1"
                     name="quantity"
+                    min="1"
                     value={formData.quantity}
                     onChange={handleChange}
                     required
                   />
+
                 </div>
+
               </div>
 
+              {/* NOTES */}
               <div className="form-group">
+
                 <label htmlFor="notes">
                   Additional details
                 </label>
@@ -214,8 +231,10 @@ function Order() {
                   placeholder="Tell us anything else we should know..."
                   rows="4"
                 />
+
               </div>
 
+              {/* SUBMIT */}
               <button
                 type="submit"
                 className="submit-btn"
@@ -225,16 +244,19 @@ function Order() {
               </button>
 
               <p className="form-note">
-                We'll contact you to confirm the details
-                and cost before proceeding.
+                We'll contact you to confirm the
+                details and estimated cost.
               </p>
+
             </form>
+
           )}
+
         </div>
+
       </div>
     </section>
   );
 }
 
-export default Order;
-
+export default OrderSection;

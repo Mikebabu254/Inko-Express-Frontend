@@ -4,6 +4,10 @@ import React, { useState } from "react";
 function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   const scrollToOrder = () => {
     const orderSection = document.getElementById("order");
 
@@ -11,17 +15,19 @@ function NavBar() {
       orderSection.scrollIntoView({
         behavior: "smooth",
       });
-
-      setMenuOpen(false);
     }
+
+    closeMenu();
   };
 
   return (
     <header className="navbar">
       <div className="nav-container">
-        <a href="#home" className="logo">
-          <span className="logo-main">INKO</span>
-          <span className="logo-sub">ERRANDS</span>
+        <a href="#home" className="brand-logo">
+          <img
+            src="/logo.png"
+            alt="Inko Express logo"
+          />
         </a>
 
         <button
@@ -31,47 +37,45 @@ function NavBar() {
           aria-label="Toggle navigation menu"
           aria-expanded={menuOpen}
         >
-          ☰
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
 
         <nav
-          className={
-            menuOpen
-              ? "nav-links active"
-              : "nav-links"
-          }
+          className={`nav-links ${menuOpen ? "active" : ""}`}
         >
           <a
             href="#home"
-            onClick={() => setMenuOpen(false)}
+            onClick={closeMenu}
           >
             Home
           </a>
 
           <a
             href="#services"
-            onClick={() => setMenuOpen(false)}
+            onClick={closeMenu}
           >
             Services
           </a>
 
           <a
             href="#how-it-works"
-            onClick={() => setMenuOpen(false)}
+            onClick={closeMenu}
           >
             How It Works
           </a>
 
           <a
             href="#about"
-            onClick={() => setMenuOpen(false)}
+            onClick={closeMenu}
           >
-            About
+            About Us
           </a>
 
           <a
             href="#contact"
-            onClick={() => setMenuOpen(false)}
+            onClick={closeMenu}
           >
             Contact
           </a>

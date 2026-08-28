@@ -1,46 +1,70 @@
-
 function Footer() {
   return (
     <footer id="contact">
       <div className="footer-container">
         <div className="footer-brand">
-          <a href="#home" className="logo">
-            <span className="logo-main">INKO</span>
-            <span className="logo-sub">ERRANDS</span>
-          </a>
+          <img
+            src="/inko express logo.png"
+            alt="Inko Express"
+            className="footer-logo"
+          />
 
           <p>
-            Your personal CBD shopping and errands assistant.
+            CBD shopping made easy.
+            <br />
+            You stay. We shop. We deliver.
           </p>
         </div>
 
         <div className="footer-column">
-          <h4>Explore</h4>
+          <h4>QUICK LINKS</h4>
 
-          <a href="#home">Home</a>
-          <a href="#services">Services</a>
-          <a href="#how-it-works">How It Works</a>
-          <a href="#about">About</a>
+          <a href="#home">
+            Home
+          </a>
+
+          <a href="#services">
+            Services
+          </a>
+
+          <a href="#how-it-works">
+            How It Works
+          </a>
+
+          <a href="#about">
+            About Us
+          </a>
         </div>
 
         <div className="footer-column">
-          <h4>Services</h4>
+          <h4>SERVICES</h4>
 
-          <a href="#services">Shopping</a>
-          <a href="#services">Pickups</a>
-          <a href="#services">Document Collection</a>
-          <a href="#services">Special Requests</a>
+          <a href="#services">
+            CBD Shopping
+          </a>
+
+          <a href="#services">
+            Pickup &amp; Delivery
+          </a>
+
+          <a href="#services">
+            Document Collection
+          </a>
+
+          <a href="#services">
+            Special Errands
+          </a>
         </div>
 
         <div className="footer-column">
-          <h4>Contact</h4>
+          <h4>CONTACT</h4>
 
-          <a href="tel:+254700000000">
+          <a href="tel:+254781325424">
             +254 700 000 000
           </a>
 
-          <a href="mailto:hello@inkoerrands.com">
-            hello@inkoerrands.com
+          <a href="mailto:michaelndolo17142@gmail.com">
+            michaelndolo17142@gmail.com
           </a>
 
           <a href="#order">
@@ -51,7 +75,7 @@ function Footer() {
 
       <div className="footer-bottom">
         <p>
-          © 2026 Inkognito Errands. All rights reserved.
+          © 2026 Inko Express. All rights reserved.
         </p>
 
         <p>
@@ -63,3 +87,4 @@ function Footer() {
 }
 
 export default Footer;
+
