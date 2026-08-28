@@ -1,0 +1,92 @@
+import React, { useState } from "react";
+import "./App.css";
+
+function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    location: "",
+    item: "",
+    quantity: "1",
+    notes: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    setSubmitted(true);
+
+    setTimeout(() => {
+      setSubmitted(false);
+      setFormData({
+        name: "",
+        phone: "",
+        location: "",
+        item: "",
+        quantity: "1",
+        notes: "",
+      });
+    }, 4000);
+  };
+
+  const scrollToOrder = () => {
+    document.getElementById("order").scrollIntoView({
+      behavior: "smooth",
+    });
+
+    setMenuOpen(false);
+  };
+
+  return (
+    <div className="app">
+
+      {/* ================= NAVBAR ================= */}
+
+
+
+      {/* ================= HERO ================= */}
+      <main>
+
+        
+
+
+        {/* ================= SERVICES ================= */}
+
+
+
+        {/* ================= HOW IT WORKS ================= */}
+
+
+
+        {/* ================= ORDER ================= */}
+
+
+
+        {/* ================= ABOUT ================= */}
+
+
+
+        {/* ================= CTA ================= */}
+
+
+      </main>
+
+
+      {/* ================= FOOTER ================= */}
+
+
+    </div>
+  );
+}
+
+export default App;

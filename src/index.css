@@ -1,27 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
 
-
-/* ================= VARIABLES ================= */
+/* =========================================================
+   VARIABLES
+========================================================= */
 
 :root {
   --navy: #062b5c;
   --navy-dark: #041d3e;
   --blue: #0a376f;
-
   --lime: #9ad000;
   --lime-light: #b5e22a;
-
   --white: #ffffff;
   --cream: #f6f8f2;
-
   --text: #10213a;
   --muted: #687385;
-
   --border: #dfe5dc;
 }
 
 
-/* ================= RESET ================= */
+/* =========================================================
+   RESET
+========================================================= */
 
 * {
   margin: 0;
@@ -59,33 +58,32 @@ img {
 }
 
 
-/* ================= NAVBAR ================= */
+/* =========================================================
+   NAVBAR
+========================================================= */
 
 .navbar {
   position: sticky;
   top: 0;
   z-index: 1000;
-
   background: rgba(255, 255, 255, 0.96);
-
   backdrop-filter: blur(12px);
-
   border-bottom: 1px solid rgba(6, 43, 92, 0.08);
 }
 
 .nav-container {
   width: min(1180px, 92%);
   height: 82px;
-
   margin: auto;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 
-/* LOGO */
+/* =========================================================
+   LOGO
+========================================================= */
 
 .brand-logo {
   display: flex;
@@ -101,7 +99,9 @@ img {
 }
 
 
-/* NAV LINKS */
+/* =========================================================
+   NAV LINKS
+========================================================= */
 
 .nav-links {
   display: flex;
@@ -112,9 +112,7 @@ img {
 .nav-links a {
   font-size: 14px;
   font-weight: 600;
-
   color: var(--navy);
-
   transition: 0.2s;
 }
 
@@ -123,55 +121,50 @@ img {
 }
 
 
-/* NAV BUTTON */
+/* =========================================================
+   NAV BUTTON
+========================================================= */
 
 .nav-order-btn {
   border: none;
-
   background: var(--navy);
   color: white;
-
   padding: 13px 20px;
-
   border-radius: 6px;
-
   font-size: 13px;
   font-weight: 700;
-
   transition: 0.25s;
 }
 
 .nav-order-btn:hover {
   background: var(--blue);
-
   transform: translateY(-2px);
 }
 
 
-/* MOBILE MENU */
+/* =========================================================
+   MOBILE MENU
+========================================================= */
 
 .menu-btn {
   display: none;
-
   border: none;
   background: transparent;
-
   width: 35px;
 }
 
 .menu-btn span {
   display: block;
-
   width: 25px;
   height: 2px;
-
   background: var(--navy);
-
   margin: 5px 0;
 }
 
 
-/* ================= HERO ================= */
+/* =========================================================
+   HERO
+========================================================= */
 
 .hero {
   background:
@@ -187,42 +180,34 @@ img {
 
 .hero-container {
   width: min(1180px, 92%);
-
   min-height: 720px;
-
   margin: auto;
 
   display: grid;
-
   grid-template-columns: 1.05fr 0.95fr;
 
   align-items: center;
-
   gap: 70px;
 }
 
 
-/* HERO CONTENT */
+/* =========================================================
+   HERO CONTENT
+========================================================= */
 
 .hero-badge {
   display: inline-flex;
-
   align-items: center;
-
   gap: 9px;
 
   padding: 8px 13px;
-
   border-radius: 30px;
 
   background: #eaf2d5;
-
   color: var(--navy);
 
   font-size: 11px;
-
   font-weight: 700;
-
   letter-spacing: 0.3px;
 
   margin-bottom: 25px;
@@ -233,18 +218,14 @@ img {
   height: 8px;
 
   border-radius: 50%;
-
   background: var(--lime);
 }
-
 
 .hero h1 {
   font-family: "Space Grotesk", sans-serif;
 
   font-size: clamp(50px, 6vw, 76px);
-
   line-height: 0.96;
-
   letter-spacing: -4px;
 
   color: var(--navy);
@@ -254,7 +235,6 @@ img {
   color: var(--lime);
 }
 
-
 .hero-content > p {
   max-width: 570px;
 
@@ -263,18 +243,17 @@ img {
   color: var(--muted);
 
   font-size: 16px;
-
   line-height: 1.75;
 }
 
 
-/* HERO BUTTONS */
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
 
 .hero-buttons {
   display: flex;
-
   gap: 12px;
-
   margin-top: 32px;
 }
 
@@ -282,7 +261,6 @@ img {
   border: none;
 
   background: var(--navy);
-
   color: white;
 
   padding: 15px 21px;
@@ -290,13 +268,11 @@ img {
   border-radius: 7px;
 
   display: inline-flex;
-
   align-items: center;
 
   gap: 18px;
 
   font-size: 14px;
-
   font-weight: 700;
 
   transition: 0.25s;
@@ -304,14 +280,12 @@ img {
 
 .primary-btn:hover {
   background: var(--blue);
-
   transform: translateY(-3px);
 }
 
 .primary-btn span {
   font-size: 18px;
 }
-
 
 .secondary-btn {
   border: 1px solid #cbd4c5;
@@ -321,7 +295,6 @@ img {
   border-radius: 7px;
 
   font-size: 14px;
-
   font-weight: 700;
 
   color: var(--navy);
@@ -334,11 +307,12 @@ img {
 }
 
 
-/* HERO TRUST */
+/* =========================================================
+   HERO TRUST
+========================================================= */
 
 .hero-trust {
   display: flex;
-
   align-items: center;
 
   gap: 18px;
@@ -348,46 +322,47 @@ img {
 
 .trust-item {
   display: flex;
-
   flex-direction: column;
-
   gap: 3px;
 }
 
 .trust-item strong {
   font-size: 13px;
-
   color: var(--navy);
 }
 
 .trust-item span {
   font-size: 10px;
-
   color: #8a939f;
 }
 
 .trust-line {
   width: 1px;
-
   height: 31px;
 
   background: #d2d8cf;
 }
 
 
-/* ================= HERO VISUAL ================= */
+/* =========================================================
+   HERO VISUAL
+========================================================= */
 
-.hero-visual {
+.hero-visual,
+.hero-card-wrapper {
   position: relative;
 
   min-height: 520px;
 
   display: flex;
-
   justify-content: center;
-
   align-items: center;
 }
+
+
+/* =========================================================
+   STYLING 1 HERO LOGO CARD
+========================================================= */
 
 .hero-logo-card {
   width: min(470px, 100%);
@@ -408,16 +383,165 @@ img {
 
 .hero-logo-card img {
   width: 100%;
-
   display: block;
 }
 
+
+/* =========================================================
+   STYLING 2 UNIQUE HERO CARD
+========================================================= */
+
+.hero-card {
+  width: min(430px, 100%);
+
+  background: var(--navy);
+
+  color: white;
+
+  padding: 27px;
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 30px 70px rgba(6, 43, 92, 0.17);
+
+  transform: rotate(2deg);
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  padding-bottom: 25px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.card-icon {
+  background: var(--lime);
+  color: var(--navy);
+
+  width: 47px;
+  height: 47px;
+
+  border-radius: 12px;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 22px;
+}
+
+.card-top small {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #a9b7c7;
+}
+
+.card-top h3 {
+  margin-top: 3px;
+  font-size: 17px;
+}
+
+.status-dot {
+  margin-left: auto;
+
+  width: 10px;
+  height: 10px;
+
+  background: var(--lime);
+
+  border-radius: 50%;
+}
+
+.shopping-list {
+  padding: 8px 0;
+}
+
+.shopping-item {
+  display: grid;
+
+  grid-template-columns: 40px 1fr 25px;
+
+  align-items: center;
+
+  padding: 16px 0;
+
+  gap: 9px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.shopping-item > span {
+  width: 35px;
+  height: 35px;
+
+  border-radius: 9px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  display: grid;
+  place-items: center;
+}
+
+.shopping-item strong {
+  display: block;
+  font-size: 13px;
+}
+
+.shopping-item small {
+  color: #a9b7c7;
+  font-size: 10px;
+}
+
+.shopping-item b {
+  color: var(--lime);
+}
+
+.card-footer {
+  padding-top: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-footer small {
+  color: #a9b7c7;
+
+  display: block;
+
+  font-size: 10px;
+}
+
+.card-footer strong {
+  font-size: 13px;
+}
+
+.card-footer > span {
+  background: var(--lime);
+  color: var(--navy);
+
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+}
+
+
+/* =========================================================
+   FLOATING CARD
+========================================================= */
 
 .floating-card {
   position: absolute;
 
   right: -15px;
-
   bottom: 65px;
 
   background: white;
@@ -430,7 +554,6 @@ img {
     0 18px 45px rgba(6, 43, 92, 0.14);
 
   display: flex;
-
   align-items: center;
 
   gap: 11px;
@@ -441,13 +564,26 @@ img {
   height: 31px;
 
   display: grid;
-
   place-items: center;
 
   border-radius: 50%;
 
   background: var(--lime);
+  color: var(--navy);
 
+  font-weight: 800;
+}
+
+.floating-card > span {
+  width: 31px;
+  height: 31px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: var(--lime);
   color: var(--navy);
 
   font-weight: 800;
@@ -472,7 +608,9 @@ img {
 }
 
 
-/* ================= GENERAL ================= */
+/* =========================================================
+   GENERAL
+========================================================= */
 
 .section {
   padding: 110px 0;
@@ -482,6 +620,10 @@ img {
   width: min(720px, 92%);
 
   margin: 0 auto 55px;
+}
+
+.section-heading.center {
+  text-align: center;
 }
 
 .eyebrow {
@@ -527,7 +669,9 @@ img {
 }
 
 
-/* ================= SERVICES ================= */
+/* =========================================================
+   SERVICES
+========================================================= */
 
 .services {
   background: white;
@@ -572,13 +716,11 @@ img {
     0 20px 45px rgba(6, 43, 92, 0.08);
 }
 
-
 .service-icon {
   width: 53px;
   height: 53px;
 
   display: grid;
-
   place-items: center;
 
   border-radius: 12px;
@@ -627,7 +769,6 @@ img {
   position: absolute;
 
   bottom: 25px;
-
   left: 26px;
 
   border: none;
@@ -649,16 +790,16 @@ img {
 
 .service-card button span {
   color: var(--lime);
-
   font-size: 17px;
 }
 
 
-/* ================= HOW ================= */
+/* =========================================================
+   HOW IT WORKS
+========================================================= */
 
 .how-section {
   background: var(--navy);
-
   color: white;
 }
 
@@ -723,7 +864,11 @@ img {
 }
 
 .steps {
-  border-top: 1px solid rgba(255,255,255,0.15);
+  width: min(920px, 92%);
+
+  margin: auto;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .step {
@@ -735,7 +880,7 @@ img {
 
   padding: 28px 0;
 
-  border-bottom: 1px solid rgba(255,255,255,0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .step-number {
@@ -750,7 +895,6 @@ img {
 
 .step-icon {
   font-size: 24px;
-
   margin-bottom: 10px;
 }
 
@@ -773,7 +917,9 @@ img {
 }
 
 
-/* ================= ORDER ================= */
+/* =========================================================
+   ORDER
+========================================================= */
 
 .order-section {
   background: #f0f4e9;
@@ -807,7 +953,12 @@ img {
   line-height: 1.75;
 }
 
-.order-features {
+
+/* =========================================================
+   ORDER POINTS
+========================================================= */
+
+.order-points {
   margin-top: 35px;
 
   display: flex;
@@ -817,7 +968,7 @@ img {
   gap: 14px;
 }
 
-.order-features div {
+.order-points div {
   display: flex;
 
   align-items: center;
@@ -825,12 +976,11 @@ img {
   gap: 11px;
 }
 
-.order-features span {
+.order-points span {
   width: 26px;
   height: 26px;
 
   display: grid;
-
   place-items: center;
 
   background: var(--lime);
@@ -844,7 +994,7 @@ img {
   font-weight: 800;
 }
 
-.order-features p {
+.order-points p {
   font-size: 13px;
 
   font-weight: 600;
@@ -853,7 +1003,9 @@ img {
 }
 
 
-/* FORM */
+/* =========================================================
+   FORM
+========================================================= */
 
 .form-card {
   background: white;
@@ -998,7 +1150,9 @@ img {
 }
 
 
-/* SUCCESS */
+/* =========================================================
+   SUCCESS
+========================================================= */
 
 .success-message {
   min-height: 430px;
@@ -1019,7 +1173,6 @@ img {
   height: 70px;
 
   display: grid;
-
   place-items: center;
 
   border-radius: 50%;
@@ -1054,7 +1207,9 @@ img {
 }
 
 
-/* ================= ABOUT ================= */
+/* =========================================================
+   ABOUT
+========================================================= */
 
 .about-section {
   background: white;
@@ -1074,6 +1229,11 @@ img {
   align-items: center;
 }
 
+
+/* =========================================================
+   STYLING 1 ABOUT LOGO
+========================================================= */
+
 .about-logo {
   display: flex;
 
@@ -1089,7 +1249,6 @@ img {
   background: var(--cream);
 
   display: grid;
-
   place-items: center;
 
   border: 10px solid #edf2e5;
@@ -1098,6 +1257,82 @@ img {
 .logo-circle img {
   width: 85%;
 }
+
+
+/* =========================================================
+   STYLING 2 ABOUT VISUAL
+========================================================= */
+
+.about-visual {
+  display: flex;
+
+  justify-content: center;
+}
+
+.about-box {
+  width: 330px;
+  height: 330px;
+
+  background: var(--navy);
+
+  border-radius: 20px;
+
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  color: white;
+}
+
+.about-big {
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 80px;
+
+  font-weight: 700;
+
+  letter-spacing: -6px;
+}
+
+.about-small {
+  font-size: 12px;
+
+  letter-spacing: 5px;
+
+  margin-top: -10px;
+}
+
+.about-circle {
+  position: absolute;
+
+  right: 25px;
+  bottom: 25px;
+
+  width: 60px;
+  height: 60px;
+
+  background: var(--lime);
+
+  color: var(--navy);
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  font-size: 24px;
+}
+
+
+/* =========================================================
+   ABOUT CONTENT
+========================================================= */
 
 .about-content > p {
   max-width: 530px;
@@ -1109,6 +1344,8 @@ img {
   line-height: 1.75;
 }
 
+
+/* Styling 1 */
 .about-tagline {
   display: flex;
 
@@ -1134,7 +1371,36 @@ img {
 }
 
 
-/* ================= CTA ================= */
+/* Styling 2 */
+.about-highlight {
+  margin-top: 28px;
+
+  border-left: 3px solid var(--lime);
+
+  padding-left: 17px;
+}
+
+.about-highlight strong,
+.about-highlight span {
+  display: block;
+}
+
+.about-highlight strong {
+  font-size: 16px;
+}
+
+.about-highlight span {
+  margin-top: 3px;
+
+  font-size: 13px;
+
+  color: var(--muted);
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
 
 .cta-section {
   position: relative;
@@ -1154,12 +1420,11 @@ img {
   width: 500px;
   height: 500px;
 
-  border: 80px solid rgba(255,255,255,0.12);
+  border: 80px solid rgba(255, 255, 255, 0.12);
 
   border-radius: 50%;
 
   top: -250px;
-
   right: -150px;
 }
 
@@ -1248,7 +1513,9 @@ img {
 }
 
 
-/* ================= FOOTER ================= */
+/* =========================================================
+   FOOTER
+========================================================= */
 
 footer {
   background: var(--navy);
@@ -1331,7 +1598,7 @@ footer {
 
   padding-top: 20px;
 
-  border-top: 1px solid rgba(255,255,255,0.13);
+  border-top: 1px solid rgba(255, 255, 255, 0.13);
 
   display: flex;
 
@@ -1343,7 +1610,9 @@ footer {
 }
 
 
-/* ================= TABLET ================= */
+/* =========================================================
+   TABLET
+========================================================= */
 
 @media (max-width: 1000px) {
 
@@ -1357,7 +1626,8 @@ footer {
     padding: 80px 0;
   }
 
-  .hero-visual {
+  .hero-visual,
+  .hero-card-wrapper {
     min-height: 430px;
   }
 
@@ -1383,7 +1653,8 @@ footer {
     gap: 60px;
   }
 
-  .about-logo {
+  .about-logo,
+  .about-visual {
     justify-content: flex-start;
   }
 
@@ -1393,7 +1664,9 @@ footer {
 }
 
 
-/* ================= MOBILE ================= */
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media (max-width: 700px) {
 
@@ -1431,7 +1704,7 @@ footer {
     gap: 20px;
 
     box-shadow:
-      0 15px 30px rgba(6,43,92,0.08);
+      0 15px 30px rgba(6, 43, 92, 0.08);
   }
 
   .nav-links.active {
@@ -1442,6 +1715,8 @@ footer {
     width: 100%;
   }
 
+
+  /* HERO */
 
   .hero-container {
     padding: 65px 0;
@@ -1485,7 +1760,10 @@ footer {
   }
 
 
-  .hero-visual {
+  /* HERO VISUAL */
+
+  .hero-visual,
+  .hero-card-wrapper {
     min-height: 350px;
   }
 
@@ -1495,6 +1773,10 @@ footer {
     border-radius: 20px;
   }
 
+  .hero-card {
+    padding: 21px;
+  }
+
   .floating-card {
     right: 0;
 
@@ -1502,20 +1784,25 @@ footer {
   }
 
 
+  /* GENERAL */
+
   .section {
     padding: 75px 0;
   }
 
 
+  /* SERVICES */
+
   .services-grid {
     grid-template-columns: 1fr;
   }
-
 
   .service-card {
     min-height: 300px;
   }
 
+
+  /* HOW */
 
   .step {
     grid-template-columns: 45px 1fr;
@@ -1527,6 +1814,8 @@ footer {
     font-size: 19px;
   }
 
+
+  /* FORM */
 
   .form-card {
     padding: 23px;
@@ -1543,16 +1832,28 @@ footer {
   }
 
 
+  /* ABOUT */
+
   .logo-circle {
     width: 290px;
     height: 290px;
   }
 
+  .about-box {
+    width: 100%;
+    height: 290px;
+  }
+
+  .about-big {
+    font-size: 65px;
+  }
 
   .about-tagline {
     flex-wrap: wrap;
   }
 
+
+  /* FOOTER */
 
   .footer-container {
     grid-template-columns: 1fr 1fr;
@@ -1572,7 +1873,9 @@ footer {
 }
 
 
-/* ================= SMALL PHONES ================= */
+/* =========================================================
+   SMALL PHONES
+========================================================= */
 
 @media (max-width: 430px) {
 
@@ -1586,6 +1889,14 @@ footer {
 
   .hero-logo-card {
     padding: 14px;
+  }
+
+  .hero-card {
+    width: 100%;
+  }
+
+  .shopping-item {
+    grid-template-columns: 35px 1fr 20px;
   }
 
   .floating-card {
@@ -1602,6 +1913,11 @@ footer {
 
   .cta-content h2 {
     font-size: 41px;
+  }
+
+  .hero-visual,
+  .hero-card-wrapper {
+    min-height: 330px;
   }
 
   .footer-container {
