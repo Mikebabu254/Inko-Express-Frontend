@@ -1,0 +1,701 @@
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+
+}
+
+
+.nav-container {
+
+    width: min(1200px, 92%);
+
+    height: 78px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.brand-logo {
+
+    display: flex;
+
+    align-items: center;
+
+    text-decoration: none;
+
+    flex-shrink: 0;
+
+}
+
+
+.brand-logo img {
+
+    width: 145px;
+
+    height: auto;
+
+    display: block;
+
+}
+
+
+/* =========================================
+   NAV LINKS
+========================================= */
+
+.nav-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+}
+
+
+.nav-link,
+.nav-dropdown-btn {
+
+    position: relative;
+
+    border: none;
+
+    background: none;
+
+    padding: 8px 0;
+
+    color: #303030;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: color 0.25s ease;
+
+}
+
+
+.nav-link:hover,
+.nav-dropdown-btn:hover {
+
+    color: #111;
+
+}
+
+
+.nav-link::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 0;
+
+    height: 2px;
+
+    background: #111;
+
+    transition: width 0.25s ease;
+
+}
+
+
+.nav-link:hover::after,
+.nav-link.active::after {
+
+    width: 100%;
+
+}
+
+
+/* =========================================
+   DROPDOWN BUTTON
+========================================= */
+
+.nav-dropdown {
+
+    position: relative;
+
+}
+
+
+.nav-dropdown-btn {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+}
+
+
+.nav-dropdown-btn svg {
+
+    transition: transform 0.25s ease;
+
+}
+
+
+.nav-dropdown-btn svg.rotate {
+
+    transform: rotate(180deg);
+
+}
+
+
+/* =========================================
+   DROPDOWN MENU
+========================================= */
+
+.nav-dropdown-menu {
+
+    position: absolute;
+
+    top: calc(100% + 0px);
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 310px;
+
+    padding: 18px;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(0, 0, 0, 0.08);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.12);
+
+    animation: dropdownFade 0.2s ease;
+
+}
+
+
+@keyframes dropdownFade {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, -8px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, 0);
+
+    }
+
+}
+
+
+.dropdown-heading {
+
+    padding: 4px 8px 13px;
+
+}
+
+
+.dropdown-heading span {
+
+    display: block;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+
+    color: #777;
+
+}
+
+
+.dropdown-heading p {
+
+    margin: 4px 0 0;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    color: #151515;
+
+}
+
+
+.nav-dropdown-menu > a {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 11px 10px;
+
+    color: #333;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    text-decoration: none;
+
+    border-radius: 10px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+
+}
+
+
+.nav-dropdown-menu > a:hover {
+
+    background: #f5f5f5;
+
+    color: #111;
+
+}
+
+
+.nav-dropdown-menu > a svg {
+
+    opacity: 0;
+
+    transform: translateX(-5px);
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+.nav-dropdown-menu > a:hover svg {
+
+    opacity: 1;
+
+    transform: translateX(0);
+
+}
+
+
+/* =========================================
+   CUSTOM REQUEST INSIDE DROPDOWN
+========================================= */
+
+.dropdown-custom {
+
+    margin-top: 12px;
+
+    padding: 14px;
+
+    border-radius: 12px;
+
+    background: #f6f6f6;
+
+}
+
+
+.dropdown-custom span {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 12px;
+
+    color: #666;
+
+}
+
+
+.dropdown-custom button {
+
+    padding: 0;
+
+    border: none;
+
+    background: none;
+
+    color: #111;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================
+   REQUEST BUTTON
+========================================= */
+
+.nav-request-btn {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 11px 17px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #111;
+
+    color: #fff;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+
+}
+
+
+.nav-request-btn:hover {
+
+    background: #2b2b2b;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.16);
+
+}
+
+
+.nav-request-btn svg:last-child {
+
+    transition: transform 0.25s ease;
+
+}
+
+
+.nav-request-btn:hover svg:last-child {
+
+    transform: translateX(3px);
+
+}
+
+
+/* =========================================
+   MOBILE MENU BUTTON
+========================================= */
+
+.menu-btn {
+
+    display: none;
+
+    width: 42px;
+
+    height: 42px;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 10px;
+
+    background: #fff;
+
+    color: #111;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1050px) {
+
+    .nav-links {
+
+        gap: 20px;
+
+    }
+
+    .nav-request-btn {
+
+        padding: 10px 13px;
+
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 850px) {
+
+    .nav-container {
+
+        height: 70px;
+
+    }
+
+
+    .brand-logo img {
+
+        width: 125px;
+
+    }
+
+
+    .menu-btn {
+
+        display: flex;
+
+    }
+
+
+    .nav-links {
+
+        position: absolute;
+
+        top: 70px;
+
+        left: 0;
+
+        width: 100%;
+
+        padding: 20px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 4px;
+
+        background: #fff;
+
+        border-top: 1px solid #eee;
+
+        box-shadow:
+            0 15px 30px rgba(0, 0, 0, 0.08);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transform: translateY(-10px);
+
+        transition:
+            opacity 0.25s ease,
+            transform 0.25s ease,
+            visibility 0.25s ease;
+
+    }
+
+
+    .nav-links.active {
+
+        opacity: 1;
+
+        visibility: visible;
+
+        transform: translateY(0);
+
+    }
+
+
+    .nav-link {
+
+        width: 100%;
+
+        padding: 13px 10px;
+
+        border-radius: 8px;
+
+    }
+
+
+    .nav-link:hover {
+
+        background: #f6f6f6;
+
+    }
+
+
+    .nav-link::after {
+
+        display: none;
+
+    }
+
+
+    .nav-dropdown {
+
+        width: 100%;
+
+    }
+
+
+    .nav-dropdown-btn {
+
+        width: 100%;
+
+        justify-content: space-between;
+
+        padding: 13px 10px;
+
+        border-radius: 8px;
+
+    }
+
+
+    .nav-dropdown-btn:hover {
+
+        background: #f6f6f6;
+
+    }
+
+
+    .nav-dropdown-menu {
+
+        position: static;
+
+        transform: none;
+
+        width: 100%;
+
+        margin: 4px 0 8px;
+
+        padding: 10px;
+
+        border-radius: 12px;
+
+        box-shadow: none;
+
+        background: #f7f7f7;
+
+        animation: none;
+
+    }
+
+
+    .dropdown-heading {
+
+        padding: 8px;
+
+    }
+
+
+    .nav-dropdown-menu > a {
+
+        padding: 11px 9px;
+
+    }
+
+
+    .dropdown-custom {
+
+        background: #fff;
+
+    }
+
+
+    .nav-request-btn {
+
+        width: 100%;
+
+        justify-content: center;
+
+        margin-top: 10px;
+
+        padding: 13px;
+
+    }
+
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 450px) {
+
+    .nav-container {
+
+        width: 90%;
+
+    }
+
+
+    .brand-logo img {
+
+        width: 115px;
+
+    }
+
+}

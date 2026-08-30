@@ -1,97 +1,335 @@
 
 import React, { useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+
+import {
+    Menu,
+    X,
+    ChevronDown,
+    ShoppingBag,
+    ArrowRight
+} from "lucide-react";
+
+import "./Navbar.css";
+
 
 function NavBar() {
-  const [menuOpen, setMenuOpen] = useState(false);
 
-  const closeMenu = () => {
-    setMenuOpen(false);
-  };
+    const [menuOpen, setMenuOpen] = useState(false);
+    const [categoriesOpen, setCategoriesOpen] = useState(false);
 
-  const scrollToOrder = () => {
-    const orderSection = document.getElementById("order");
+    const location = useLocation();
+    const navigate = useNavigate();
 
-    if (orderSection) {
-      orderSection.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
 
-    closeMenu();
-  };
+    const closeMenu = () => {
+        setMenuOpen(false);
+        setCategoriesOpen(false);
+    };
 
-  return (
-    <header className="navbar">
-      <div className="nav-container">
-        <a href="#home" className="brand-logo">
-          <img
-            src="/logo.png"
-            alt="Inko Express logo"
-          />
-        </a>
 
-        <button
-          className="menu-btn"
-          onClick={() => setMenuOpen(!menuOpen)}
-          type="button"
-          aria-label="Toggle navigation menu"
-          aria-expanded={menuOpen}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+    const handleRequest = () => {
 
-        <nav
-          className={`nav-links ${menuOpen ? "active" : ""}`}
-        >
-          <a
-            href="#home"
-            onClick={closeMenu}
-          >
-            Home
-          </a>
+        closeMenu();
 
-          <a
-            href="#how-it-works"
-            onClick={closeMenu}
-          >
-            How It Works
-          </a>
+        navigate("/custom-request");
 
-          <a
-            href="#services"
-            onClick={closeMenu}
-          >
-            Services
-          </a>
+    };
 
-          <a
-            href="#about"
-            onClick={closeMenu}
-          >
-            About Us
-          </a>
 
-          <a
-            href="#contact"
-            onClick={closeMenu}
-          >
-            Contact
-          </a>
+    const categories = [
+        {
+            name: "Phones & Tablets",
+            path: "/products/phones"
+        },
+        {
+            name: "Laptops & Computers",
+            path: "/products/computers"
+        },
+        {
+            name: "Electronics",
+            path: "/products/electronics"
+        },
+        {
+            name: "Fashion & Clothing",
+            path: "/products/fashion"
+        },
+        {
+            name: "Home & Office",
+            path: "/products/home-office"
+        },
+        {
+            name: "Documents & Collection",
+            path: "/products/documents"
+        }
+    ];
 
-          <button
-            className="nav-order-btn"
-            onClick={scrollToOrder}
-            type="button"
-          >
-            Request an Errand
-          </button>
-        </nav>
-      </div>
-    </header>
-  );
+
+    const isActive = (path) => {
+
+        return location.pathname === path;
+
+    };
+
+
+    return (
+
+        <header className="navbar">
+
+            <div className="nav-container">
+
+
+                {/* =================================
+                    LOGO
+                ================================= */}
+
+                <Link
+                    to="/"
+                    className="brand-logo"
+                    onClick={closeMenu}
+                >
+
+                    <img
+                        src="/logo.png"
+                        alt="Inko Express"
+                    />
+
+                </Link>
+
+
+                {/* =================================
+                    DESKTOP NAVIGATION
+                ================================= */}
+
+                <nav
+                    className={`nav-links ${
+                        menuOpen ? "active" : ""
+                    }`}
+                >
+
+
+                    <Link
+                        to="/"
+                        className={
+                            isActive("/")
+                                ? "nav-link active"
+                                : "nav-link"
+                        }
+                        onClick={closeMenu}
+                    >
+                        Home
+                    </Link>
+
+
+                    <Link
+                        to="/category"
+                        className={
+                            isActive("/category")
+                                ? "nav-link active"
+                                : "nav-link"
+                        }
+                        onClick={closeMenu}
+                    >
+                        Categories
+                    </Link>
+
+
+                    {/* =================================
+                        CATEGORIES DROPDOWN
+                    ================================= */}
+
+                    <div
+                        className="nav-dropdown"
+                        onMouseEnter={() =>
+                            setCategoriesOpen(true)
+                        }
+                        onMouseLeave={() =>
+                            setCategoriesOpen(false)
+                        }
+                    >
+
+                        <button
+                            className="nav-dropdown-btn"
+                            type="button"
+                            onClick={() =>
+                                setCategoriesOpen(
+                                    !categoriesOpen
+                                )
+                            }
+                        >
+
+                            Shop by Category
+
+                            <ChevronDown
+                                size={16}
+                                className={
+                                    categoriesOpen
+                                        ? "rotate"
+                                        : ""
+                                }
+                            />
+
+                        </button>
+
+
+                        {categoriesOpen && (
+
+                            <div className="nav-dropdown-menu">
+
+                                <div className="dropdown-heading">
+
+                                    <span>
+                                        FIND WHAT YOU NEED
+                                    </span>
+
+                                    <p>
+                                        Choose a category
+                                    </p>
+
+                                </div>
+
+
+                                {categories.map(
+                                    (category) => (
+
+                                        <Link
+                                            key={
+                                                category.path
+                                            }
+                                            to={
+                                                category.path
+                                            }
+                                            onClick={
+                                                closeMenu
+                                            }
+                                        >
+
+                                            <span>
+                                                {
+                                                    category.name
+                                                }
+                                            </span>
+
+                                            <ArrowRight
+                                                size={15}
+                                            />
+
+                                        </Link>
+
+                                    )
+                                )}
+
+
+                                <div className="dropdown-custom">
+
+                                    <span>
+                                        Can't find it?
+                                    </span>
+
+                                    <button
+                                        type="button"
+                                        onClick={
+                                            handleRequest
+                                        }
+                                    >
+                                        Make a custom request
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        )}
+
+                    </div>
+
+
+                    <a
+                        href="/#how-it-works"
+                        className="nav-link"
+                        onClick={closeMenu}
+                    >
+                        How It Works
+                    </a>
+
+
+                    <a
+                        href="/#about"
+                        className="nav-link"
+                        onClick={closeMenu}
+                    >
+                        About Us
+                    </a>
+
+
+                    <a
+                        href="/#contact"
+                        className="nav-link"
+                        onClick={closeMenu}
+                    >
+                        Contact
+                    </a>
+
+
+                    {/* =================================
+                        REQUEST BUTTON
+                    ================================= */}
+
+                    <button
+                        className="nav-request-btn"
+                        onClick={handleRequest}
+                        type="button"
+                    >
+
+                        <ShoppingBag size={17} />
+
+                        Request an Item
+
+                        <ArrowRight size={16} />
+
+                    </button>
+
+                </nav>
+
+
+                {/* =================================
+                    MOBILE MENU BUTTON
+                ================================= */}
+
+                <button
+                    className="menu-btn"
+                    onClick={() =>
+                        setMenuOpen(!menuOpen)
+                    }
+                    type="button"
+                    aria-label={
+                        menuOpen
+                            ? "Close navigation menu"
+                            : "Open navigation menu"
+                    }
+                    aria-expanded={menuOpen}
+                >
+
+                    {menuOpen ? (
+
+                        <X size={25} />
+
+                    ) : (
+
+                        <Menu size={25} />
+
+                    )}
+
+                </button>
+
+            </div>
+
+        </header>
+
+    );
+
 }
+
 
 export default NavBar;
 
