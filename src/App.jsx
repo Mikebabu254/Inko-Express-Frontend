@@ -4,6 +4,7 @@ import {
   Route,
 } from "react-router-dom";
 import Home from "./Pages/Home";
+import Category from "./Pages/Cartegory";
 
 
 function App() {
@@ -16,6 +17,8 @@ function App() {
           path="/"
           element={<Home />}
         />
+
+        <Route path="/category" element={<Category/>}/>
 
       </Routes>
 
