@@ -13,11 +13,11 @@ import {
     House,
     FileText,
     PackageSearch,
-    SlidersHorizontal,
     X
 } from "lucide-react";
 
 import "./Products.css";
+
 import NavBar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 
@@ -25,12 +25,9 @@ import Footer from "../Components/Footer";
 function Products() {
 
     const navigate = useNavigate();
-
     const { category } = useParams();
 
     const [searchTerm, setSearchTerm] = useState("");
-
-    const [selectedBrand, setSelectedBrand] = useState("All");
 
 
     /* =========================================
@@ -42,42 +39,42 @@ function Products() {
         phones: {
             title: "Phones & Tablets",
             description:
-                "Browse popular phones, tablets and accessories available from Nairobi CBD.",
+                "Tell us the phone or tablet you're looking for and we'll search Nairobi CBD shops for you.",
             icon: Smartphone
         },
 
         computers: {
             title: "Laptops & Computers",
             description:
-                "Find laptops, desktop computers and computer accessories from trusted CBD shops.",
+                "Looking for a laptop, desktop or computer accessory? Tell us what you need and we'll find it.",
             icon: Laptop
         },
 
         electronics: {
             title: "Electronics",
             description:
-                "Discover electronics, accessories and gadgets available in Nairobi CBD.",
+                "Find electronics, gadgets and accessories from shops around Nairobi CBD.",
             icon: Headphones
         },
 
         fashion: {
             title: "Fashion & Clothing",
             description:
-                "Find clothing, shoes, bags and fashion items from shops in Nairobi CBD.",
+                "Tell us what you're looking for — clothes, shoes, bags or accessories — and we'll search for it.",
             icon: Shirt
         },
 
         "home-office": {
             title: "Home & Office",
             description:
-                "Browse home essentials, office equipment and everyday items.",
+                "Need something for your home, office or workspace? Let us find it for you.",
             icon: House
         },
 
         documents: {
             title: "Documents & Collection",
             description:
-                "Request document pickup, parcel collection and other errands within Nairobi CBD.",
+                "Need a document, parcel or purchase collected from Nairobi CBD? We've got you covered.",
             icon: FileText
         }
 
@@ -85,77 +82,55 @@ function Products() {
 
 
     /* =========================================
-       DUMMY PRODUCTS
+       REQUEST TYPES
+       These are NOT products in stock.
+       They simply help the customer describe
+       what they are looking for.
     ========================================= */
 
-    const productsData = {
+    const requestTypes = {
 
         phones: [
 
             {
                 id: 1,
-                name: "iPhone 15 Pro",
-                brand: "Apple",
+                name: "iPhone",
                 category: "Smartphone",
-                price: "Request Price",
                 description:
-                    "Premium Apple smartphone with powerful performance and professional camera system.",
-                emoji: "📱"
+                    "Looking for an iPhone? Tell us the model, storage, colour, condition or budget.",
+                emoji: "📱",
+                keywords: "iphone apple ios"
             },
 
             {
                 id: 2,
-                name: "Samsung Galaxy S24",
-                brand: "Samsung",
+                name: "Samsung",
                 category: "Smartphone",
-                price: "Request Price",
                 description:
-                    "Flagship Samsung smartphone with powerful camera and performance.",
-                emoji: "📱"
+                    "Looking for a Samsung phone? Tell us the Galaxy model, storage, colour or budget.",
+                emoji: "📱",
+                keywords: "samsung galaxy android"
             },
 
             {
                 id: 3,
-                name: "iPhone 14",
-                brand: "Apple",
+                name: "Other Smartphone",
                 category: "Smartphone",
-                price: "Request Price",
                 description:
-                    "Popular Apple smartphone available in different storage options.",
-                emoji: "📱"
+                    "Looking for Xiaomi, Redmi, Tecno, Infinix, Oppo, Google Pixel or another phone?",
+                emoji: "📱",
+                keywords:
+                    "xiaomi redmi tecno infinix oppo google pixel android"
             },
 
             {
                 id: 4,
-                name: "Samsung Galaxy A55",
-                brand: "Samsung",
-                category: "Smartphone",
-                price: "Request Price",
-                description:
-                    "Reliable mid-range smartphone with excellent battery performance.",
-                emoji: "📱"
-            },
-
-            {
-                id: 5,
-                name: "Redmi Note Series",
-                brand: "Xiaomi",
-                category: "Smartphone",
-                price: "Request Price",
-                description:
-                    "Affordable smartphone options with strong performance.",
-                emoji: "📱"
-            },
-
-            {
-                id: 6,
-                name: "iPad Air",
-                brand: "Apple",
+                name: "Tablet",
                 category: "Tablet",
-                price: "Request Price",
                 description:
-                    "Powerful Apple tablet for work, entertainment and everyday use.",
-                emoji: "📲"
+                    "Tell us the tablet you're looking for, including brand, model and preferred specifications.",
+                emoji: "📲",
+                keywords: "ipad tablet samsung tablet"
             }
 
         ],
@@ -165,68 +140,46 @@ function Products() {
 
             {
                 id: 1,
-                name: "HP EliteBook",
-                brand: "HP",
-                category: "Laptop",
-                price: "Request Price",
+                name: "Laptop",
+                category: "Computer",
                 description:
-                    "Business laptop suitable for work, school and everyday tasks.",
-                emoji: "💻"
+                    "Tell us the brand, model, RAM, storage, processor, screen size or your budget.",
+                emoji: "💻",
+                keywords:
+                    "laptop hp dell lenovo apple macbook asus acer"
             },
 
             {
                 id: 2,
-                name: "MacBook Air",
-                brand: "Apple",
-                category: "Laptop",
-                price: "Request Price",
+                name: "Desktop Computer",
+                category: "Computer",
                 description:
-                    "Lightweight and powerful laptop for professionals and students.",
-                emoji: "💻"
+                    "Need a desktop PC? Tell us whether you want a complete PC or specific components.",
+                emoji: "🖥️",
+                keywords:
+                    "desktop pc computer gaming office"
             },
 
             {
                 id: 3,
-                name: "Dell Latitude",
-                brand: "Dell",
-                category: "Laptop",
-                price: "Request Price",
+                name: "Monitor",
+                category: "Computer Accessory",
                 description:
-                    "Reliable business laptop available in multiple specifications.",
-                emoji: "💻"
+                    "Tell us your preferred monitor size, resolution, refresh rate and budget.",
+                emoji: "🖥️",
+                keywords:
+                    "monitor screen display gaming"
             },
 
             {
                 id: 4,
-                name: "Desktop Computer",
-                brand: "Custom",
-                category: "Desktop",
-                price: "Request Price",
-                description:
-                    "Desktop computers and custom builds for office or personal use.",
-                emoji: "🖥️"
-            },
-
-            {
-                id: 5,
-                name: "Computer Monitor",
-                brand: "Various",
+                name: "Computer Accessories",
                 category: "Accessories",
-                price: "Request Price",
                 description:
-                    "Monitors for office work, gaming and professional use.",
-                emoji: "🖥️"
-            },
-
-            {
-                id: 6,
-                name: "Mechanical Keyboard",
-                brand: "Various",
-                category: "Accessories",
-                price: "Request Price",
-                description:
-                    "Keyboards for gaming, office work and programming.",
-                emoji: "⌨️"
+                    "Looking for a keyboard, mouse, webcam, charger, bag or another computer accessory?",
+                emoji: "⌨️",
+                keywords:
+                    "keyboard mouse webcam charger computer accessories"
             }
 
         ],
@@ -236,46 +189,46 @@ function Products() {
 
             {
                 id: 1,
-                name: "Wireless Headphones",
-                brand: "Various",
+                name: "Headphones & Earbuds",
                 category: "Audio",
-                price: "Request Price",
                 description:
-                    "Wireless headphones and earbuds from popular brands.",
-                emoji: "🎧"
+                    "Tell us the brand, type, features and budget you're looking for.",
+                emoji: "🎧",
+                keywords:
+                    "headphones earbuds earphones bluetooth"
             },
 
             {
                 id: 2,
-                name: "Bluetooth Speaker",
-                brand: "JBL",
+                name: "Speakers",
                 category: "Audio",
-                price: "Request Price",
                 description:
-                    "Portable Bluetooth speakers for music and entertainment.",
-                emoji: "🔊"
+                    "Looking for a Bluetooth, portable or home speaker?",
+                emoji: "🔊",
+                keywords:
+                    "speaker bluetooth jbl sound"
             },
 
             {
                 id: 3,
-                name: "Phone Charger",
-                brand: "Various",
-                category: "Accessories",
-                price: "Request Price",
+                name: "Smart Watch",
+                category: "Wearables",
                 description:
-                    "Chargers, adapters and charging accessories.",
-                emoji: "🔌"
+                    "Tell us the smartwatch brand, features and budget you prefer.",
+                emoji: "⌚",
+                keywords:
+                    "smartwatch apple watch samsung watch fitness"
             },
 
             {
                 id: 4,
-                name: "Smart Watch",
-                brand: "Various",
-                category: "Wearables",
-                price: "Request Price",
+                name: "Chargers & Accessories",
+                category: "Accessories",
                 description:
-                    "Smart watches and fitness trackers.",
-                emoji: "⌚"
+                    "Need a charger, cable, adapter, power bank or another accessory?",
+                emoji: "🔌",
+                keywords:
+                    "charger cable adapter powerbank usb"
             }
 
         ],
@@ -286,45 +239,45 @@ function Products() {
             {
                 id: 1,
                 name: "Men's Clothing",
-                brand: "Various",
                 category: "Clothing",
-                price: "Request Price",
                 description:
-                    "Shirts, trousers, jackets and other men's fashion.",
-                emoji: "👔"
+                    "Tell us what you're looking for, including size, colour, style and budget.",
+                emoji: "👔",
+                keywords:
+                    "men shirt trousers jeans jacket clothes"
             },
 
             {
                 id: 2,
                 name: "Women's Clothing",
-                brand: "Various",
                 category: "Clothing",
-                price: "Request Price",
                 description:
-                    "Dresses, tops, trousers and other women's fashion.",
-                emoji: "👗"
+                    "Tell us the type, size, colour, style and budget you're looking for.",
+                emoji: "👗",
+                keywords:
+                    "women dress tops trousers clothes fashion"
             },
 
             {
                 id: 3,
-                name: "Sneakers",
-                brand: "Various",
+                name: "Shoes & Sneakers",
                 category: "Shoes",
-                price: "Request Price",
                 description:
-                    "Casual, sports and fashion sneakers.",
-                emoji: "👟"
+                    "Tell us your shoe type, size, preferred brand, colour and budget.",
+                emoji: "👟",
+                keywords:
+                    "shoes sneakers nike adidas boots"
             },
 
             {
                 id: 4,
-                name: "Bags",
-                brand: "Various",
+                name: "Bags & Accessories",
                 category: "Accessories",
-                price: "Request Price",
                 description:
-                    "Backpacks, handbags and travel bags.",
-                emoji: "👜"
+                    "Looking for a handbag, backpack, travel bag, wallet or another accessory?",
+                emoji: "👜",
+                keywords:
+                    "bag backpack handbag wallet accessories"
             }
 
         ],
@@ -334,46 +287,35 @@ function Products() {
 
             {
                 id: 1,
-                name: "Office Chair",
-                brand: "Various",
+                name: "Office Furniture",
                 category: "Office",
-                price: "Request Price",
                 description:
-                    "Comfortable office chairs for home and workplace.",
-                emoji: "🪑"
+                    "Looking for a desk, office chair, cabinet or other office furniture?",
+                emoji: "🪑",
+                keywords:
+                    "office chair desk furniture cabinet"
             },
 
             {
                 id: 2,
-                name: "Office Desk",
-                brand: "Various",
+                name: "Office Equipment",
                 category: "Office",
-                price: "Request Price",
                 description:
-                    "Office and study desks in different sizes.",
-                emoji: "🗄️"
+                    "Tell us what office equipment you're looking for.",
+                emoji: "🖨️",
+                keywords:
+                    "printer scanner office equipment"
             },
 
             {
                 id: 3,
-                name: "Printer",
-                brand: "HP",
-                category: "Office",
-                price: "Request Price",
-                description:
-                    "Printers for home, school and office use.",
-                emoji: "🖨️"
-            },
-
-            {
-                id: 4,
                 name: "Home Essentials",
-                brand: "Various",
                 category: "Home",
-                price: "Request Price",
                 description:
-                    "Everyday home products and household essentials.",
-                emoji: "🏠"
+                    "Looking for something for your home? Tell us what you need.",
+                emoji: "🏠",
+                keywords:
+                    "home household kitchen appliance"
             }
 
         ],
@@ -384,34 +326,34 @@ function Products() {
             {
                 id: 1,
                 name: "Document Collection",
-                brand: "Errand",
                 category: "Documents",
-                price: "Request Quote",
                 description:
-                    "We collect your documents from offices and shops within Nairobi CBD.",
-                emoji: "📄"
+                    "We'll collect your documents from a location within Nairobi CBD.",
+                emoji: "📄",
+                keywords:
+                    "document collect papers office"
             },
 
             {
                 id: 2,
                 name: "Parcel Collection",
-                brand: "Errand",
                 category: "Collection",
-                price: "Request Quote",
                 description:
-                    "We collect parcels and packages from CBD locations.",
-                emoji: "📦"
+                    "Have a parcel waiting in CBD? We'll collect and deliver it to you.",
+                emoji: "📦",
+                keywords:
+                    "parcel package collection pickup"
             },
 
             {
                 id: 3,
                 name: "Shop Pickup",
-                brand: "Errand",
                 category: "Collection",
-                price: "Request Quote",
                 description:
-                    "Bought something already? We can collect and deliver it.",
-                emoji: "🛍️"
+                    "Already bought something? We can collect it from the shop and deliver it.",
+                emoji: "🛍️",
+                keywords:
+                    "shop pickup purchase collection delivery"
             }
 
         ]
@@ -424,92 +366,80 @@ function Products() {
     ========================================= */
 
     const currentCategory =
-        categoryData[category] ||
-        categoryData.phones;
+        categoryData[category] || categoryData.phones;
 
 
-    const currentProducts =
-        productsData[category] ||
-        productsData.phones;
+    const currentRequests =
+        requestTypes[category] || requestTypes.phones;
 
 
-    const CategoryIcon =
-        currentCategory.icon;
+    const CategoryIcon = currentCategory.icon;
 
 
     /* =========================================
-       BRANDS
+       SEARCH
     ========================================= */
 
-    const brands = [
-        "All",
-        ...new Set(
-            currentProducts.map(
-                (product) => product.brand
-            )
-        )
-    ];
+    const filteredRequests = useMemo(() => {
+
+        const search = searchTerm.toLowerCase().trim();
+
+        if (!search) {
+            return currentRequests;
+        }
+
+        return currentRequests.filter((item) => {
+
+            return (
+                item.name.toLowerCase().includes(search) ||
+                item.description.toLowerCase().includes(search) ||
+                item.keywords.toLowerCase().includes(search) ||
+                item.category.toLowerCase().includes(search)
+            );
+
+        });
+
+    }, [searchTerm, currentRequests]);
 
 
     /* =========================================
-       FILTER PRODUCTS
+       REQUEST HANDLER
     ========================================= */
 
-    const filteredProducts = useMemo(() => {
+    const handleRequest = (request) => {
 
-        return currentProducts.filter(
-            (product) => {
+        navigate("/custom-request", {
 
-                const matchesSearch =
-                    product.name
-                        .toLowerCase()
-                        .includes(
-                            searchTerm.toLowerCase()
-                        ) ||
-                    product.description
-                        .toLowerCase()
-                        .includes(
-                            searchTerm.toLowerCase()
-                        );
+            state: {
 
+                product: request.name,
 
-                const matchesBrand =
-                    selectedBrand === "All" ||
-                    product.brand === selectedBrand;
+                category: currentCategory.title,
 
-
-                return (
-                    matchesSearch &&
-                    matchesBrand
-                );
+                requestType: request.category
 
             }
-        );
 
-    }, [
-        searchTerm,
-        selectedBrand,
-        currentProducts
-    ]);
+        });
+
+    };
 
 
     /* =========================================
-       REQUEST PRODUCT
+       GENERAL CUSTOM REQUEST
     ========================================= */
 
-    const handleProductRequest = (
-        product
-    ) => {
+    const handleCustomRequest = () => {
 
-        navigate(
-            "/custom-request",
-            {
-                state: {
-                    product: product.name,
-                    category: currentCategory.title
-                }
+        navigate("/custom-request", {
+
+            state: {
+
+                category: currentCategory.title
+
             }
-        );
+
+        });
 
     };
 
@@ -518,24 +448,20 @@ function Products() {
 
         <div className="products-page">
 
-
-            {/* ================= NAVBAR ================= */}
-
-            <NavBar/>
+            <NavBar />
 
 
-            {/* ================= HERO ================= */}
+            {/* =========================================
+                HERO
+            ========================================= */}
 
             <section className="products-hero">
 
                 <div className="products-hero-container">
 
-
                     <button
                         className="products-back-btn"
-                        onClick={() =>
-                            navigate("/category")
-                        }
+                        onClick={() => navigate("/category")}
                     >
 
                         <ArrowLeft size={18} />
@@ -546,7 +472,6 @@ function Products() {
 
 
                     <div className="products-hero-content">
-
 
                         <div className="products-category-icon">
 
@@ -559,7 +484,7 @@ function Products() {
 
                             <span className="products-small-label">
 
-                                BROWSE PRODUCTS
+                                WHAT ARE YOU LOOKING FOR?
 
                             </span>
 
@@ -573,14 +498,11 @@ function Products() {
 
                             <p>
 
-                                {
-                                    currentCategory.description
-                                }
+                                {currentCategory.description}
 
                             </p>
 
                         </div>
-
 
                     </div>
 
@@ -593,12 +515,10 @@ function Products() {
 
                         <input
                             type="text"
-                            placeholder="Search for a product..."
+                            placeholder="Search for what you need..."
                             value={searchTerm}
                             onChange={(e) =>
-                                setSearchTerm(
-                                    e.target.value
-                                )
+                                setSearchTerm(e.target.value)
                             }
                         />
 
@@ -607,9 +527,7 @@ function Products() {
 
                             <button
                                 className="clear-search"
-                                onClick={() =>
-                                    setSearchTerm("")
-                                }
+                                onClick={() => setSearchTerm("")}
                             >
 
                                 <X size={18} />
@@ -620,208 +538,144 @@ function Products() {
 
                     </div>
 
-
                 </div>
 
             </section>
 
 
-            {/* ================= PRODUCTS ================= */}
+            {/* =========================================
+                REQUEST OPTIONS
+            ========================================= */}
 
             <section className="products-section">
 
                 <div className="products-container">
 
 
-                    {/* HEADER */}
-
                     <div className="products-section-header">
-
 
                         <div>
 
                             <span className="products-label">
 
-                                AVAILABLE OPTIONS
+                                START YOUR REQUEST
 
                             </span>
 
-
                             <h2>
 
-                                Popular requests
+                                What are you looking for?
 
                             </h2>
 
+                            <p className="products-section-description">
+
+                                Choose an option below or tell us exactly
+                                what you want. We don't need to have the
+                                item listed — we'll search for it in Nairobi CBD.
+
+                            </p>
 
                         </div>
 
 
                         <div className="products-count">
 
-                            <SlidersHorizontal
-                                size={17}
-                            />
-
                             <span>
 
-                                {
-                                    filteredProducts.length
-                                }
-
-                                {" "}
-
-                                items found
+                                {filteredRequests.length} options
 
                             </span>
 
                         </div>
 
-
                     </div>
 
 
-                    {/* BRAND FILTER */}
+                    {/* =========================================
+                        REQUEST GRID
+                    ========================================= */}
 
-                    <div className="brand-filter">
-
-                        {brands.map(
-                            (brand) => (
-
-                                <button
-                                    key={brand}
-                                    className={
-                                        selectedBrand ===
-                                        brand
-                                            ? "brand-btn active"
-                                            : "brand-btn"
-                                    }
-                                    onClick={() =>
-                                        setSelectedBrand(
-                                            brand
-                                        )
-                                    }
-                                >
-
-                                    {brand}
-
-                                </button>
-
-                            )
-                        )}
-
-                    </div>
-
-
-                    {/* PRODUCT GRID */}
-
-                    {filteredProducts.length >
-                    0 ? (
+                    {filteredRequests.length > 0 ? (
 
                         <div className="products-grid">
 
-                            {filteredProducts.map(
-                                (product) => (
+                            {filteredRequests.map((request) => (
 
-                                    <div
-                                        key={product.id}
-                                        className="product-card"
-                                    >
+                                <div
+                                    key={request.id}
+                                    className="product-card"
+                                >
 
+                                    <div className="product-visual">
 
-                                        <div className="product-visual">
+                                        <div className="product-emoji">
 
-
-                                            <div className="product-emoji">
-
-                                                {
-                                                    product.emoji
-                                                }
-
-                                            </div>
-
-
-                                            <span className="product-category-tag">
-
-                                                {
-                                                    product.category
-                                                }
-
-                                            </span>
-
+                                            {request.emoji}
 
                                         </div>
 
 
-                                        <div className="product-content">
+                                        <span className="product-category-tag">
 
+                                            {request.category}
 
-                                            <span className="product-brand">
-
-                                                {
-                                                    product.brand
-                                                }
-
-                                            </span>
-
-
-                                            <h3>
-
-                                                {
-                                                    product.name
-                                                }
-
-                                            </h3>
-
-
-                                            <p>
-
-                                                {
-                                                    product.description
-                                                }
-
-                                            </p>
-
-
-                                            <div className="product-card-footer">
-
-
-                                                <span className="product-price">
-
-                                                    {
-                                                        product.price
-                                                    }
-
-                                                </span>
-
-
-                                                <button
-                                                    onClick={() =>
-                                                        handleProductRequest(
-                                                            product
-                                                        )
-                                                    }
-                                                >
-
-                                                    Request
-
-                                                    <ArrowRight
-                                                        size={17}
-                                                    />
-
-                                                </button>
-
-
-                                            </div>
-
-
-                                        </div>
-
+                                        </span>
 
                                     </div>
 
-                                )
-                            )}
+
+                                    <div className="product-content">
+
+                                        <span className="product-brand">
+
+                                            INKO EXPRESS
+
+                                        </span>
+
+
+                                        <h3>
+
+                                            {request.name}
+
+                                        </h3>
+
+
+                                        <p>
+
+                                            {request.description}
+
+                                        </p>
+
+
+                                        <div className="product-card-footer">
+
+                                            <span className="product-price">
+
+                                                Request
+
+                                            </span>
+
+
+                                            <button
+                                                onClick={() =>
+                                                    handleRequest(request)
+                                                }
+                                            >
+
+                                                Tell Us More
+
+                                                <ArrowRight size={17} />
+
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            ))}
 
                         </div>
 
@@ -829,123 +683,102 @@ function Products() {
 
                         <div className="no-products">
 
-
-                            <PackageSearch
-                                size={55}
-                            />
-
+                            <PackageSearch size={55} />
 
                             <h2>
 
-                                We couldn't find that item.
+                                We don't have that listed.
 
                             </h2>
 
-
                             <p>
 
-                                Don't worry. Send us a custom request
-                                and we'll look for it in Nairobi CBD.
+                                That's okay. Tell us exactly what you're
+                                looking for and we'll search for it in
+                                Nairobi CBD.
 
                             </p>
 
 
                             <button
-                                onClick={() =>
-                                    navigate(
-                                        "/custom-request"
-                                    )
-                                }
+                                onClick={handleCustomRequest}
                             >
 
                                 Request This Item
 
-                                <ArrowRight
-                                    size={18}
-                                />
+                                <ArrowRight size={18} />
 
                             </button>
-
 
                         </div>
 
                     )}
 
 
-                    {/* CUSTOM REQUEST */}
+                    {/* =========================================
+                        CUSTOM REQUEST
+                    ========================================= */}
 
                     <div className="products-custom-request">
 
-
                         <div className="products-custom-icon">
 
-                            <ShoppingBag
-                                size={32}
-                            />
+                            <ShoppingBag size={32} />
 
                         </div>
 
 
                         <div className="products-custom-content">
 
-
                             <span>
 
-                                DON'T SEE WHAT YOU NEED?
+                                CAN'T FIND WHAT YOU NEED?
 
                             </span>
 
 
                             <h2>
 
-                                Send us your exact request.
+                                Just tell us what you want.
 
                             </h2>
 
 
                             <p>
 
-                                Tell us the product name, brand,
-                                colour, size or any details.
-                                We'll search for it in Nairobi CBD
-                                and get back to you.
+                                You don't have to choose from our options.
+                                Tell us the exact product you're looking for,
+                                including the model, brand, colour, size,
+                                specifications or budget.
 
                             </p>
-
 
                         </div>
 
 
                         <button
                             className="products-custom-btn"
-                            onClick={() =>
-                                navigate(
-                                    "/custom-request"
-                                )
-                            }
+                            onClick={handleCustomRequest}
                         >
 
-                            Custom Request
+                            Make a Request
 
-                            <ArrowRight
-                                size={19}
-                            />
+                            <ArrowRight size={19} />
 
                         </button>
 
-
                     </div>
-
 
                 </div>
 
             </section>
 
 
-            {/* ================= HOW IT WORKS ================= */}
+            {/* =========================================
+                HOW IT WORKS
+            ========================================= */}
 
             <section className="products-info-section">
-
 
                 <div className="products-info-container">
 
@@ -961,16 +794,15 @@ function Products() {
 
                         <h2>
 
-                            Found something?
+                            You tell us what you need.
 
                             <strong>
 
-                                We'll handle it.
+                                We find it.
 
                             </strong>
 
                         </h2>
-
 
                     </div>
 
@@ -991,21 +823,19 @@ function Products() {
 
                                 <h3>
 
-                                    Request the item
+                                    Describe what you want
 
                                 </h3>
 
 
                                 <p>
 
-                                    Select a product or describe
-                                    exactly what you're looking for.
+                                    Choose a request type or tell us exactly
+                                    what you're looking for.
 
                                 </p>
 
-
                             </div>
-
 
                         </div>
 
@@ -1023,21 +853,19 @@ function Products() {
 
                                 <h3>
 
-                                    We find it in CBD
+                                    We search CBD shops
 
                                 </h3>
 
 
                                 <p>
 
-                                    Our team checks available shops
-                                    and confirms the item for you.
+                                    Our agent checks shops and suppliers
+                                    around Nairobi CBD to find suitable options.
 
                                 </p>
 
-
                             </div>
-
 
                         </div>
 
@@ -1055,6 +883,36 @@ function Products() {
 
                                 <h3>
 
+                                    We confirm with you
+
+                                </h3>
+
+
+                                <p>
+
+                                    We'll send you the available option,
+                                    price and other details before buying.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div className="products-info-step">
+
+                            <span>
+
+                                04
+
+                            </span>
+
+
+                            <div>
+
+                                <h3>
+
                                     We deliver it
 
                                 </h3>
@@ -1062,35 +920,31 @@ function Products() {
 
                                 <p>
 
-                                    Once everything is confirmed,
-                                    we bring your item to you.
+                                    Once you approve the purchase, we collect
+                                    the item and deliver it to you.
 
                                 </p>
 
-
                             </div>
-
 
                         </div>
 
 
                     </div>
 
-
                 </div>
 
             </section>
 
 
-            {/* ================= FOOTER ================= */}
-
-            <Footer/>
-
+            <Footer />
 
         </div>
 
     );
+
 }
 
 
 export default Products;
+
