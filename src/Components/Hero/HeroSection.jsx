@@ -77,7 +77,7 @@ function HeroSection({ scrollToOrder }) {
               <span className="card-icon">🛍️</span>
 
               <div>
-                <small>INKO ERRANDS</small>
+                <small>INKO EXPRESS</small>
                 <h3>Your shopping list</h3>
               </div>
 
@@ -138,34 +138,6 @@ function HeroSection({ scrollToOrder }) {
             </div>
           </div>
         </div>
-
-        {/* <div className="hero-visual">
-
-          <div className="hero-logo-card">
-            <img
-              src="/inko express logo.png"
-              alt="Inko Express"
-            />
-          </div>
-
-          <div className="floating-card">
-
-            <div className="floating-icon">
-              ✓
-            </div>
-
-            <div>
-              <strong>Errand accepted</strong>
-
-              <small>
-                We're heading to the CBD
-              </small>
-            </div>
-
-          </div>
-
-        </div> */}
-
       </div>
     </section>
   );
