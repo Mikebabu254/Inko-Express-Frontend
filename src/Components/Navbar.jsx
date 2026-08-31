@@ -59,7 +59,7 @@ function NavBar() {
             path: "/products/home-office"
         },
         {
-            name: "Documents & Collection",
+            name: "Percel & Documents Collection",
             path: "/products/documents"
         }
     ];
@@ -158,7 +158,7 @@ function NavBar() {
                             }
                         >
 
-                            Shop by Category
+                            Errands by Category
 
                             <ChevronDown
                                 size={16}
